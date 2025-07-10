@@ -9,13 +9,16 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import {createUserWithEmailAndPassword,signInWithEmailAndPassword,} from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 
 import { Form } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 
 import { signIn, signUp } from "@/lib/actions/auth.action";
-import FormField from "@/components/FormField";
+import FormField from "./FormField";
 
 const authFormSchema = (type: FormType) => {
   return z.object({
